@@ -16,6 +16,7 @@ define('FRZ_PLUGIN_VERSION', '1.0.0');
 // Include necessary files
 include_once FRZ_PLUGIN_DIR . 'includes/active-deactive.php';
 include_once FRZ_PLUGIN_DIR . 'includes/register-post-types.php';
+include_once FRZ_PLUGIN_DIR . 'includes/elementor-extends.php';
 
 // Main Plugin Class
 class Forazitech_plugin{
