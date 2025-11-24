@@ -26,7 +26,7 @@ class Forazitech_plugin{
         return self::$instance;
     }
 
-    use Activation_Deactivation, Register_Post_type;
+    use Activation_Deactivation, Register_Post_type, Elementor_Extends;
     public function __construct(){
         register_activation_hook( __FILE__, [$this, 'activate'] );
         register_deactivation_hook( __FILE__, [$this, 'deactivate'] );
@@ -35,6 +35,9 @@ class Forazitech_plugin{
         add_action('init', [$this, 'register_custom_post_types']);
 
         add_action( 'add_meta_boxes', [$this, 'add_post_custom_filds']);
+
+        // Elementor Extends
+        $this->elementor_extends_init();
     }
 
     public function register_custom_post_types(){
@@ -43,6 +46,12 @@ class Forazitech_plugin{
 
     public function add_post_custom_filds(){
         $this->team_meta_box();
+    }
+
+    // Other plugin methods can be added here
+    private function elementor_extends_init(){
+        // elementor custom dynamic tag
+        add_action('elementor/dynamic_tags/register', [$this, 'frz_custom_daynamic_tag']);
     }
 }
 

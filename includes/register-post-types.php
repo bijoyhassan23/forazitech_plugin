@@ -50,8 +50,8 @@ trait Register_Post_type{
     public function team_filds(){
         ob_start();
             ?>
-                <label for="position">Position:</label>
-                <input type="text" name="position" id="position" />
+                <!-- <label for="position">Position:</label>
+                <input type="text" name="position" id="position" /> -->
             <?php
         echo ob_get_clean();
     }
