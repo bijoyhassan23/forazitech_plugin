@@ -34,3 +34,10 @@ class Reading_Time extends \Elementor\Core\DynamicTags\Tag {
         echo ceil( $word_count / $words_per_minute );
     }
 }
+
+
+trait Elementor_Extends{
+    public function frz_custom_daynamic_tag( $dynamic_tags ){
+        $dynamic_tags->register( new Reading_Time() );
+    }
+}
